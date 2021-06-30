@@ -21,6 +21,10 @@ export default function GetTask({ index, item, removeTask, editTask }) {
         }
     }
 
+    function taskEditOnCahngeClickHandler(e) {
+        setTask(e.target.value);
+    }
+
     return (
         <>
             {/* <li className="list"> {index} || {task}
@@ -32,7 +36,7 @@ export default function GetTask({ index, item, removeTask, editTask }) {
                 <button style={{ marginRight: 3 }} className="delete" onClick={() => removeTask(index)}> Delete</button>
             </li>) : (
                 <div >
-                    <textarea style={{ marginRight: 5 }} value={task} className="editTask" onChange={() => setTask(event.target.value)}></textarea>
+                    <textarea style={{ marginRight: 5 }} value={task} className="editTask" onChange={taskEditOnCahngeClickHandler}></textarea>
                     <button className="saveTask" onClick={() => saveTask()}> Save Task </button>
                 </div>)}
         </>
